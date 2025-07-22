@@ -6,9 +6,9 @@ public enum Suit {
     HEARTS('H'),
     SWORDS('S');
 
-    private final Character symbol;
+    private final char symbol;
 
-    Suit(Character symbol) {
+    Suit(char symbol) {
         this.symbol = symbol;
     }
 
