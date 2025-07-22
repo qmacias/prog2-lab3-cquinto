@@ -33,23 +33,21 @@ public class MainApplication {
     private static int getCardValue(Value value) {
         int result;
 
-        String currentValue = value.getType();
-
-        switch (currentValue) {
-            case "J":
+        switch (value) {
+            case JACK:
                 result = 11;
                 break;
-            case "Q":
+            case QUEEN:
                 result = 12;
                 break;
-            case "K":
+            case KING:
                 result = 13;
                 break;
-            case "A":
+            case AS:
                 result = 14;
                 break;
             default:
-                result = Integer.parseInt(currentValue);
+                result = Integer.parseInt(value.getType());
         }
 
         return result;
