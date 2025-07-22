@@ -1,11 +1,66 @@
 # Act_1_Card_Game
 
+Poker is played with the 52 cards in the deck. 
+
+The cards have the values, in order from lowest to highest: 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K and A.
+
+There are four suits: clubs ♣, diamonds ♦, hearts ♥ and spades ♠. None of which has more value than the other.
+
 ## Getting Started
 
 ### Install Dependencies
 ```console
 mvn clean install
 ```
+
+## Workflow
+
+### Flowchart
+
+```
+---
+title: Card game example
+---
+classDiagram
+    class Suit {
+        -char symbol
+        +getSymbol() Character
+        +toString() String
+    }
+    class Value {
+        -String type
+        +getType() String
+        +toString() String
+    }
+    class Card {
+        -Suit suit
+        -Value value
+        +getValue() Value
+        +toString() String
+    }
+    class Deck {
+        -Card[] cards
+        -Random generator
+        +initialize() void
+        +getRandomCard() Card
+        -shuffle() void
+        -generate() int
+        +toString() String
+    }
+  
+    Card o-- Suit
+    Card o-- Value
+    Deck *-- Card
+```
+
+![Mermaid Diagram](./mermaid-diagram-2025-07-22-203426.png)
+
+
+### Execution
+
+![Console Evidence 1](./evidence_1.jpg)
+![Console Evidence 2](./evidence_2.jpg)
+![Console Evidence 3](./evidence_3.jpg)
 
 ### References
 
