@@ -49,10 +49,6 @@ public final class Deck {
         return generator.nextInt(cards.length);
     }
 
-    public Card[] getCards() {
-        return cards;
-    }
-
     @Override
     public String toString() {
         return String.format("Deck(cards='%s')", Arrays.toString(cards));
