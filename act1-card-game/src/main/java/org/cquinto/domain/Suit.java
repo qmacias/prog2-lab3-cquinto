@@ -1,10 +1,10 @@
 package org.cquinto.domain;
 
 public enum Suit {
-    CLOVER('C'),
+    CLUBS('C'),
     DIAMONDS('D'),
     HEARTS('H'),
-    SWORDS('S');
+    SPADES('S');
 
     private final char symbol;
 
