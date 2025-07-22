@@ -5,6 +5,7 @@ import java.util.Random;
 
 public final class Deck {
     private final Card[] cards;
+    private final Random generator = new Random();
 
     public Deck(Card[] cards) {
         this.cards = cards;
@@ -26,11 +27,15 @@ public final class Deck {
         }
     }
 
-    public void shuffle() {
-        Random random = new Random();
+    public Card getRandomCard() {
+        shuffle();
 
+        return cards[generate()];
+    }
+
+    private void shuffle() {
         for (int i = 0; i < cards.length; i++) {
-            int randomIndex = random.nextInt(cards.length);
+            int randomIndex = generate();
 
             Card temp = cards[i];
 
@@ -38,6 +43,10 @@ public final class Deck {
 
             cards[randomIndex] = temp;
         }
+    }
+
+    private int generate() {
+        return generator.nextInt(cards.length);
     }
 
     public Card[] getCards() {

@@ -12,9 +12,10 @@ public class MainApplication {
 
         deck.initialize();
 
-        deck.shuffle();
+        Card computerCard = deck.getRandomCard();
+        Card playerCard = deck.getRandomCard();
 
-        System.out.println(deck);
+        System.out.printf("Computer: %s, Player: %s", computerCard, playerCard);
     }
 
 }
