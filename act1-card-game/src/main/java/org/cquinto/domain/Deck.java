@@ -9,6 +9,22 @@ public final class Deck {
         this.cards = cards;
     }
 
+    public void initialize() {
+        int index = 0;
+
+        Suit[] suitSymbols = Suit.values();
+
+        Value[] valueTypes = Value.values();
+
+        for (Suit symbol : suitSymbols) {
+            for (Value value : valueTypes) {
+                cards[index] = new Card(symbol, value);
+
+                index++;
+            }
+        }
+    }
+
     public Card[] getCards() {
         return cards;
     }
