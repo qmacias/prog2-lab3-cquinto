@@ -19,7 +19,7 @@ public final class Card {
 
     @Override
     public String toString() {
-        return String.format("Card(suit='%s', value='%s')", suit, value);
+        return String.format("%s%s", suit, value);
     }
 
 }

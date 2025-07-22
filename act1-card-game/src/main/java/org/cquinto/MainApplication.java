@@ -16,7 +16,7 @@ public class MainApplication {
         Card computerCard = deck.getRandomCard();
         Card playerCard = deck.getRandomCard();
 
-        System.out.printf("Computer: %s, Player: %s\n", computerCard, playerCard);
+        System.out.printf("Computer: %s\nPlayer: %s\n\n", computerCard, playerCard);
 
         int computerValue = getCardValue(computerCard.getValue());
         int playerValue = getCardValue(playerCard.getValue());

@@ -17,7 +17,7 @@ public enum Value {
 
     @Override
     public String toString() {
-        return String.format("Value(type='%s')", type);
+        return String.format("%s", type);
     }
 
 }

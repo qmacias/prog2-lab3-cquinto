@@ -18,7 +18,7 @@ public enum Suit {
 
     @Override
     public String toString() {
-        return String.format("Suit(symbol='%s')", symbol);
+        return String.format("%s", symbol);
     }
 
 }
