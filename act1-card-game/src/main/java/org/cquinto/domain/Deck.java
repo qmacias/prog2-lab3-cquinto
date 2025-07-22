@@ -1,6 +1,7 @@
 package org.cquinto.domain;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public final class Deck {
     private final Card[] cards;
@@ -22,6 +23,20 @@ public final class Deck {
 
                 index++;
             }
+        }
+    }
+
+    public void shuffle() {
+        Random random = new Random();
+
+        for (int i = 0; i < cards.length; i++) {
+            int randomIndex = random.nextInt(cards.length);
+
+            Card temp = cards[i];
+
+            cards[i] = cards[randomIndex];
+
+            cards[randomIndex] = temp;
         }
     }
 

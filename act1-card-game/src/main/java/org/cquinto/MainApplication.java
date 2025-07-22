@@ -12,6 +12,8 @@ public class MainApplication {
 
         deck.initialize();
 
+        deck.shuffle();
+
         System.out.println(deck);
     }
 
