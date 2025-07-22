@@ -2,7 +2,6 @@ package org.cquinto;
 
 import org.cquinto.domain.Card;
 import org.cquinto.domain.Deck;
-import org.cquinto.domain.Value;
 
 /**
  * Cristian Ezequiel Quinto
@@ -18,8 +17,8 @@ public class MainApplication {
 
         System.out.printf("Computer: %s\nPlayer: %s\n\n", computerCard, playerCard);
 
-        int computerValue = getCardValue(computerCard.getValue());
-        int playerValue = getCardValue(playerCard.getValue());
+        int computerValue = getCardValue(computerCard);
+        int playerValue = getCardValue(playerCard);
 
         if (computerValue > playerValue) {
             System.out.println("Perdiste");
@@ -30,10 +29,10 @@ public class MainApplication {
         }
     }
 
-    private static int getCardValue(Value value) {
+    private static int getCardValue(Card card) {
         int result;
 
-        switch (value) {
+        switch (card.getValue()) {
             case JACK:
                 result = 11;
                 break;
@@ -47,7 +46,7 @@ public class MainApplication {
                 result = 14;
                 break;
             default:
-                result = Integer.parseInt(value.getType());
+                result = Integer.parseInt(card.getValue().getType());
         }
 
         return result;
