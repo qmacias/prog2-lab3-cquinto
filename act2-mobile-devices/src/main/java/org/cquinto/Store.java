@@ -65,8 +65,6 @@ public final class Store {
                     System.out.printf("- Product: %s, %s\n",
                             products[productAcquisition.getAcquisitionNumber()], productAcquisition);
                 }
-            } else {
-                System.out.println("There are no product acquisitions today.");
             }
         }
     }
@@ -82,8 +80,6 @@ public final class Store {
                     System.out.printf("- Service: %s, %s\n",
                             services[serviceAcquisition.getAcquisitionNumber()], serviceAcquisition);
                 }
-            } else {
-                System.out.println("There are no service acquisitions today.");
             }
         }
     }
