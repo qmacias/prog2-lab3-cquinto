@@ -17,18 +17,6 @@ public abstract class Acquisition {
 
     public abstract String getType();
 
-    public String getClientName() {
-        return clientName;
-    }
-
-    public String getClientPhone() {
-        return clientPhone;
-    }
-
-    public String getObservations() {
-        return observations;
-    }
-
     public LocalDate getCurrentDate() {
         return currentDate;
     }

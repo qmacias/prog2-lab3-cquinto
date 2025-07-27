@@ -9,12 +9,6 @@ public abstract class Product {
         this.detail = new ProductDetail(brand, price);
     }
 
-    public abstract String getType();
-
-    public String getName() {
-        return name;
-    }
-
     public ProductDetail getDetail() {
         return detail;
     }

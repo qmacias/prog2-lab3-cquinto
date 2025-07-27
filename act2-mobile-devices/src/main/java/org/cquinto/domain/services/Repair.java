@@ -5,9 +5,4 @@ public final class Repair extends Service {
         super(name, company, price);
     }
 
-    @Override
-    public String getCategory() {
-        return "Repair";
-    }
-
 }

@@ -13,10 +13,6 @@ public final class ServiceDetail {
         return company;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
     @Override
     public String toString() {
         return String.format("Service detail: Company: %s - Price: %.2f", company, price);

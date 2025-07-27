@@ -9,12 +9,6 @@ public abstract class Service {
         this.detail = new ServiceDetail(company, price);
     }
 
-    public abstract String getCategory();
-
-    public String getName() {
-        return name;
-    }
-
     public ServiceDetail getDetail() {
         return detail;
     }

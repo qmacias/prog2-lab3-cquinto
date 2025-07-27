@@ -5,9 +5,4 @@ public final class Accessory extends Product {
         super(name, brand, price);
     }
 
-    @Override
-    public String getType() {
-        return "Accessory";
-    }
-
 }

@@ -10,10 +10,6 @@ public final class ProductAcquisition extends Acquisition {
         this.productBrand = productBrand;
     }
 
-    public String getProductBrand() {
-        return productBrand;
-    }
-
     @Override
     public String getType() {
         return "Product";

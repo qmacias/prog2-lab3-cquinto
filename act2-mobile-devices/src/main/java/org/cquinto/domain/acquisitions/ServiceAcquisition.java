@@ -10,10 +10,6 @@ public final class ServiceAcquisition extends Acquisition {
         this.serviceCompany = serviceCompany;
     }
 
-    public String getServiceCompany() {
-        return serviceCompany;
-    }
-
     @Override
     public String getType() {
         return "Service";

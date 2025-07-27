@@ -5,9 +5,4 @@ public final class FinalProduct extends Product {
         super(name, brand, price);
     }
 
-    @Override
-    public String getType() {
-        return "Final product";
-    }
-
 }
