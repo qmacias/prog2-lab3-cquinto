@@ -1,6 +1,10 @@
 package org.cquinto;
 
-import org.cquinto.domain.*;
+import org.cquinto.domain.acquisitions.Acquisition;
+import org.cquinto.domain.acquisitions.ProductAcquisition;
+import org.cquinto.domain.acquisitions.ServiceAcquisition;
+import org.cquinto.domain.products.Product;
+import org.cquinto.domain.services.Service;
 
 import java.util.Arrays;
 

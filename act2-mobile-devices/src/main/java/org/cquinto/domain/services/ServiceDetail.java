@@ -1,4 +1,4 @@
-package org.cquinto.domain;
+package org.cquinto.domain.services;
 
 public final class ServiceDetail {
     private final String company;

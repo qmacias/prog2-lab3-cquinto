@@ -1,4 +1,4 @@
-package org.cquinto.domain;
+package org.cquinto.domain.products;
 
 public abstract class Product {
     protected final String name;

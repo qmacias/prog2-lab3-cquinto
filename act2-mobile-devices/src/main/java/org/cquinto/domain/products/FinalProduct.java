@@ -1,4 +1,4 @@
-package org.cquinto.domain;
+package org.cquinto.domain.products;
 
 public final class FinalProduct extends Product {
     public FinalProduct(String name, String brand, double price) {

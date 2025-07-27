@@ -1,4 +1,4 @@
-package org.cquinto.domain;
+package org.cquinto.domain.products;
 
 public final class ProductDetail {
     private final String brand;

@@ -1,4 +1,4 @@
-package org.cquinto.domain;
+package org.cquinto.domain.services;
 
 public abstract class Service {
     protected final String name;

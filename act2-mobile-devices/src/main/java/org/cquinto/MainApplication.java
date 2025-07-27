@@ -1,6 +1,14 @@
 package org.cquinto;
 
-import org.cquinto.domain.*;
+import org.cquinto.domain.acquisitions.Acquisition;
+
+import org.cquinto.domain.products.Accessory;
+import org.cquinto.domain.products.FinalProduct;
+import org.cquinto.domain.products.Product;
+
+import org.cquinto.domain.services.Maintenance;
+import org.cquinto.domain.services.Repair;
+import org.cquinto.domain.services.Service;
 
 import java.util.Scanner;
 

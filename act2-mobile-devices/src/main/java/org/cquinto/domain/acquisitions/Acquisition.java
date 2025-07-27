@@ -1,4 +1,4 @@
-package org.cquinto.domain;
+package org.cquinto.domain.acquisitions;
 
 import java.time.LocalDate;
 
