@@ -47,15 +47,15 @@ public class MainApplication {
         int yesOrNoOption;
 
         do {
-            System.out.println("1. Buy product");
-            System.out.println("2. Buy service");
+            Scanner scanner = new Scanner(System.in);
 
-            System.out.println("3. List product acquisitions");
-            System.out.println("4. List service acquisitions");
+            System.out.println("Welcome! What dou you want?");
+            System.out.println("1. Product");
+            System.out.println("2. Service");
+            System.out.println("3. List today's product acquisitions");
+            System.out.println("4. List today's service acquisitions");
 
             System.out.print("Enter an option (quit with 0): ");
-
-            Scanner scanner = new Scanner(System.in);
             mainOption = Integer.parseInt(scanner.nextLine());
 
             switch (mainOption) {
