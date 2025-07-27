@@ -7,18 +7,24 @@ public abstract class Acquisition {
     protected final String clientPhone;
     protected final String observations;
     protected final LocalDate currentDate;
+    protected final int acquisitionNumber;
 
-    protected Acquisition(String clientName, String clientPhone, String observations, LocalDate currentDate) {
+    protected Acquisition(String clientName, String clientPhone, String observations, LocalDate currentDate, int acquisitionNumber) {
         this.clientName = clientName;
         this.clientPhone = clientPhone;
         this.observations = observations;
         this.currentDate = currentDate;
+        this.acquisitionNumber = acquisitionNumber;
     }
 
     public abstract String getType();
 
     public LocalDate getCurrentDate() {
         return currentDate;
+    }
+
+    public int getAcquisitionNumber() {
+        return acquisitionNumber;
     }
 
     @Override

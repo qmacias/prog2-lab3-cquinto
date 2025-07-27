@@ -82,7 +82,7 @@ public class MainApplication {
 
                         store.registerAcquisition(
                                 new ProductAcquisition(
-                                        clientName, clientPhone, observations, currentDate, productDetail.getBrand()));
+                                        clientName, clientPhone, observations, currentDate, detailOption, productDetail.getBrand()));
 
                         System.out.println("Product acquired successfully!");
                     }
@@ -111,7 +111,7 @@ public class MainApplication {
 
                         store.registerAcquisition(
                                 new ServiceAcquisition(
-                                        clientName, clientPhone, observations, currentDate, serviceDetail.getCompany()));
+                                        clientName, clientPhone, observations, currentDate, detailOption, serviceDetail.getCompany()));
 
                         System.out.println("Service acquired successfully!");
                     }

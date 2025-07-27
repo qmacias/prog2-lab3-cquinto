@@ -55,14 +55,15 @@ public final class Store {
     }
 
     public void listProductAcquisitions(LocalDate currentDate) {
-        System.out.println("Product acquisitions:");
+        System.out.println("History:");
 
         for (int i = 0; i < acquisitions.length; i++) {
             if (acquisitions[i].getType().equals("Product")) {
                 ProductAcquisition productAcquisition = (ProductAcquisition) acquisitions[i];
 
                 if (productAcquisition.getCurrentDate().isEqual(currentDate)) {
-                    System.out.println("- " + productAcquisition);
+                    System.out.printf("- Product: %s, %s\n",
+                            products[productAcquisition.getAcquisitionNumber()], productAcquisition);
                 }
             } else {
                 System.out.println("There are no product acquisitions today.");
@@ -71,14 +72,15 @@ public final class Store {
     }
 
     public void listServiceAcquisitions(LocalDate currentDate) {
-        System.out.println("Service acquisitions:");
+        System.out.println("History:");
 
         for (int i = 0; i < acquisitions.length; i++) {
             if (acquisitions[i].getType().equals("Service")) {
                 ServiceAcquisition serviceAcquisition = (ServiceAcquisition) acquisitions[i];
 
                 if (serviceAcquisition.getCurrentDate().isEqual(currentDate)) {
-                    System.out.println("- " + serviceAcquisition);
+                    System.out.printf("- Service: %s, %s\n",
+                            services[serviceAcquisition.getAcquisitionNumber()], serviceAcquisition);
                 }
             } else {
                 System.out.println("There are no service acquisitions today.");

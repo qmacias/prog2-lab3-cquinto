@@ -5,8 +5,8 @@ import java.time.LocalDate;
 public final class ServiceAcquisition extends Acquisition {
     private final String serviceCompany;
 
-    public ServiceAcquisition(String clientName, String clientPhone, String observations, LocalDate currentDate, String serviceCompany) {
-        super(clientName, clientPhone, observations, currentDate);
+    public ServiceAcquisition(String clientName, String clientPhone, String observations, LocalDate currentDate, int acquisitionNumber, String serviceCompany) {
+        super(clientName, clientPhone, observations, currentDate, acquisitionNumber);
         this.serviceCompany = serviceCompany;
     }
 

@@ -5,8 +5,8 @@ import java.time.LocalDate;
 public final class ProductAcquisition extends Acquisition {
     private final String productBrand;
 
-    public ProductAcquisition(String clientName, String clientPhone, String observations, LocalDate currentDate, String productBrand) {
-        super(clientName, clientPhone, observations, currentDate);
+    public ProductAcquisition(String clientName, String clientPhone, String observations, LocalDate currentDate, int acquisitionNumber, String productBrand) {
+        super(clientName, clientPhone, observations, currentDate, acquisitionNumber);
         this.productBrand = productBrand;
     }
 
