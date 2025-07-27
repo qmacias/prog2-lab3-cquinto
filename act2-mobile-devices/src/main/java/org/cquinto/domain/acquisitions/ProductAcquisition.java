@@ -1,24 +1,27 @@
 package org.cquinto.domain.acquisitions;
 
-import org.cquinto.domain.products.Product;
-
 import java.time.LocalDate;
 
 public final class ProductAcquisition extends Acquisition {
-    private final Product product;
+    private final String productBrand;
 
-    public ProductAcquisition(String clientName, String clientPhone, String observations, LocalDate currentDate, Product product) {
+    public ProductAcquisition(String clientName, String clientPhone, String observations, LocalDate currentDate, String productBrand) {
         super(clientName, clientPhone, observations, currentDate);
-        this.product = product;
+        this.productBrand = productBrand;
     }
 
-    public Product getProduct() {
-        return product;
+    public String getProductBrand() {
+        return productBrand;
     }
 
     @Override
     public String getType() {
         return "Product";
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s, Brand: %s", super.toString(), productBrand);
     }
 
 }

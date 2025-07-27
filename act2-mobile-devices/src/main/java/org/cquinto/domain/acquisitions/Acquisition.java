@@ -35,7 +35,7 @@ public abstract class Acquisition {
 
     @Override
     public String toString() {
-        return String.format("Acquisition(clientName='%s', clientPhone='%s', observations='%s', currentDate='%s')", clientName, clientPhone, observations, currentDate);
+        return String.format("Client Name: %s, Client Phone: %s, Observations: %s", clientName, clientPhone, observations);
     }
 
 }

@@ -5,10 +5,12 @@ import org.cquinto.domain.acquisitions.Acquisition;
 import org.cquinto.domain.products.Accessory;
 import org.cquinto.domain.products.FinalProduct;
 import org.cquinto.domain.products.Product;
+import org.cquinto.domain.products.ProductDetail;
 
 import org.cquinto.domain.services.Maintenance;
 import org.cquinto.domain.services.Repair;
 import org.cquinto.domain.services.Service;
+import org.cquinto.domain.services.ServiceDetail;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -65,7 +67,7 @@ public class MainApplication {
                     System.out.print("Select product: ");
                     detailOption = Integer.parseInt(scanner.nextLine());
 
-                    store.listProductDetail(detailOption);
+                    ProductDetail productDetail = store.getProductDetail(detailOption);
 
                     System.out.print("What would you like to do? (1. Acquire, 2. Cancel): ");
                     yesOrNoOption = Integer.parseInt(scanner.nextLine());
@@ -80,7 +82,7 @@ public class MainApplication {
                     System.out.print("Select service: ");
                     detailOption = Integer.parseInt(scanner.nextLine());
 
-                    store.listServiceDetail(detailOption);
+                    ServiceDetail serviceDetail = store.getServiceDetail(detailOption);
 
                     System.out.print("What would you like to do? (1. Acquire, 2. Cancel): ");
                     yesOrNoOption = Integer.parseInt(scanner.nextLine());

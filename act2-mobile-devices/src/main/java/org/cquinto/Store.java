@@ -5,7 +5,10 @@ import org.cquinto.domain.acquisitions.ProductAcquisition;
 import org.cquinto.domain.acquisitions.ServiceAcquisition;
 
 import org.cquinto.domain.products.Product;
+import org.cquinto.domain.products.ProductDetail;
+
 import org.cquinto.domain.services.Service;
+import org.cquinto.domain.services.ServiceDetail;
 
 import java.time.LocalDate;
 import java.util.Arrays;
@@ -37,8 +40,8 @@ public final class Store {
         }
     }
 
-    public void listProductDetail(int option) {
-        System.out.println(products[option - 1].getDetail().toString());
+    public ProductDetail getProductDetail(int option) {
+        return products[option - 1].getDetail();
     }
 
     public void listServices() {
@@ -49,8 +52,8 @@ public final class Store {
         }
     }
 
-    public void listServiceDetail(int option) {
-        System.out.println(services[option - 1].getDetail().toString());
+    public ServiceDetail getServiceDetail(int option) {
+        return services[option - 1].getDetail();
     }
 
     public void listProductAcquisitions(LocalDate currentDate) {
