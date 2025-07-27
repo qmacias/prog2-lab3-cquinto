@@ -19,7 +19,7 @@ public final class ServiceDetail {
 
     @Override
     public String toString() {
-        return String.format("Company: %s - Price: %.2f", company, price);
+        return String.format("Service detail: Company: %s - Price: %.2f", company, price);
     }
 
 }

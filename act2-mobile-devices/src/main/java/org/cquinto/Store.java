@@ -1,8 +1,6 @@
 package org.cquinto;
 
-import org.cquinto.domain.acquisitions.Acquisition;
-import org.cquinto.domain.acquisitions.ProductAcquisition;
-import org.cquinto.domain.acquisitions.ServiceAcquisition;
+import org.cquinto.domain.acquisitions.*;
 
 import org.cquinto.domain.products.Product;
 import org.cquinto.domain.products.ProductDetail;
@@ -36,7 +34,7 @@ public final class Store {
         System.out.println("Products:");
 
         for (int i = 0; i < products.length; i++) {
-            System.out.printf("%d.- %s\n", i + 1, products[i].toString());
+            System.out.printf("%d.- %s\n", i + 1, products[i]);
         }
     }
 
@@ -48,7 +46,7 @@ public final class Store {
         System.out.println("Services:");
 
         for (int i = 0; i < services.length; i++) {
-            System.out.printf("%d.- %s\n", i + 1, services[i].toString());
+            System.out.printf("%d.- %s\n", i + 1, services[i]);
         }
     }
 
@@ -63,11 +61,11 @@ public final class Store {
             if (acquisitions[i].getType().equals("Product")) {
                 ProductAcquisition productAcquisition = (ProductAcquisition) acquisitions[i];
 
-                if (productAcquisition.getCurrentDate() == currentDate) {
-                    System.out.println(productAcquisition);
-                } else {
-                    System.out.println("There are no product acquisitions today.");
+                if (productAcquisition.getCurrentDate().isEqual(currentDate)) {
+                    System.out.println("- " + productAcquisition);
                 }
+            } else {
+                System.out.println("There are no product acquisitions today.");
             }
         }
     }
@@ -79,11 +77,11 @@ public final class Store {
             if (acquisitions[i].getType().equals("Service")) {
                 ServiceAcquisition serviceAcquisition = (ServiceAcquisition) acquisitions[i];
 
-                if (serviceAcquisition.getCurrentDate() == currentDate) {
-                    System.out.println(serviceAcquisition);
-                } else {
-                    System.out.println("There are no service acquisitions today.");
+                if (serviceAcquisition.getCurrentDate().isEqual(currentDate)) {
+                    System.out.println("- " + serviceAcquisition);
                 }
+            } else {
+                System.out.println("There are no service acquisitions today.");
             }
         }
     }

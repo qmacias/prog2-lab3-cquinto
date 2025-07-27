@@ -19,7 +19,7 @@ public final class ProductDetail {
 
     @Override
     public String toString() {
-        return String.format("Brand: %s - Price: %.2f", brand, price);
+        return String.format("Product detail: Brand: %s - Price: %.2f", brand, price);
     }
 
 }

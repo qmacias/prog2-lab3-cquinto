@@ -1,16 +1,8 @@
 package org.cquinto;
 
-import org.cquinto.domain.acquisitions.Acquisition;
-
-import org.cquinto.domain.products.Accessory;
-import org.cquinto.domain.products.FinalProduct;
-import org.cquinto.domain.products.Product;
-import org.cquinto.domain.products.ProductDetail;
-
-import org.cquinto.domain.services.Maintenance;
-import org.cquinto.domain.services.Repair;
-import org.cquinto.domain.services.Service;
-import org.cquinto.domain.services.ServiceDetail;
+import org.cquinto.domain.acquisitions.*;
+import org.cquinto.domain.products.*;
+import org.cquinto.domain.services.*;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -48,7 +40,12 @@ public class MainApplication {
         int detailOption;
         int yesOrNoOption;
 
+        String clientName;
+        String clientPhone;
+        String observations;
+
         do {
+            LocalDate currentDate = LocalDate.now();
             Scanner scanner = new Scanner(System.in);
 
             System.out.println("Welcome! What dou you want?");
@@ -68,12 +65,26 @@ public class MainApplication {
                     detailOption = Integer.parseInt(scanner.nextLine());
 
                     ProductDetail productDetail = store.getProductDetail(detailOption);
+                    System.out.println(productDetail);
 
                     System.out.print("What would you like to do? (1. Acquire, 2. Cancel): ");
                     yesOrNoOption = Integer.parseInt(scanner.nextLine());
 
                     if (yesOrNoOption == 1) {
-                        System.out.println("Product acquired.");
+                        System.out.print("Enter client name: ");
+                        clientName = scanner.nextLine();
+
+                        System.out.print("Enter client phone: ");
+                        clientPhone = scanner.nextLine();
+
+                        System.out.print("Enter observations: ");
+                        observations = scanner.nextLine();
+
+                        store.registerAcquisition(
+                                new ProductAcquisition(
+                                        clientName, clientPhone, observations, currentDate, productDetail.getBrand()));
+
+                        System.out.println("Product acquired successfully!");
                     }
                     break;
                 case 2:
@@ -83,19 +94,33 @@ public class MainApplication {
                     detailOption = Integer.parseInt(scanner.nextLine());
 
                     ServiceDetail serviceDetail = store.getServiceDetail(detailOption);
+                    System.out.println(serviceDetail);
 
                     System.out.print("What would you like to do? (1. Acquire, 2. Cancel): ");
                     yesOrNoOption = Integer.parseInt(scanner.nextLine());
 
                     if (yesOrNoOption == 1) {
-                        System.out.println("Service acquired.");
+                        System.out.print("Enter client name: ");
+                        clientName = scanner.nextLine();
+
+                        System.out.print("Enter client phone: ");
+                        clientPhone = scanner.nextLine();
+
+                        System.out.print("Enter observations: ");
+                        observations = scanner.nextLine();
+
+                        store.registerAcquisition(
+                                new ServiceAcquisition(
+                                        clientName, clientPhone, observations, currentDate, serviceDetail.getCompany()));
+
+                        System.out.println("Service acquired successfully!");
                     }
                     break;
                 case 3:
-                    store.listProductAcquisitions(LocalDate.now());
+                    store.listProductAcquisitions(currentDate);
                     break;
                 case 4:
-                    store.listServiceAcquisitions(LocalDate.now());
+                    store.listServiceAcquisitions(currentDate);
                     break;
                 case 0:
                     System.out.println("Bye! See you soon.");
