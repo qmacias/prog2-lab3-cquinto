@@ -10,6 +10,7 @@ import org.cquinto.domain.services.Maintenance;
 import org.cquinto.domain.services.Repair;
 import org.cquinto.domain.services.Service;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -89,10 +90,10 @@ public class MainApplication {
                     }
                     break;
                 case 3:
-                    store.listProductAcquisitions();
+                    store.listProductAcquisitions(LocalDate.now());
                     break;
                 case 4:
-                    store.listServiceAcquisitions();
+                    store.listServiceAcquisitions(LocalDate.now());
                     break;
                 case 0:
                     System.out.println("Bye! See you soon.");

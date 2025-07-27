@@ -3,9 +3,11 @@ package org.cquinto;
 import org.cquinto.domain.acquisitions.Acquisition;
 import org.cquinto.domain.acquisitions.ProductAcquisition;
 import org.cquinto.domain.acquisitions.ServiceAcquisition;
+
 import org.cquinto.domain.products.Product;
 import org.cquinto.domain.services.Service;
 
+import java.time.LocalDate;
 import java.util.Arrays;
 
 public final class Store {
@@ -51,26 +53,34 @@ public final class Store {
         System.out.println(services[option - 1].getDetail().toString());
     }
 
-    public void listProductAcquisitions() {
+    public void listProductAcquisitions(LocalDate currentDate) {
         System.out.println("Product acquisitions:");
 
         for (int i = 0; i < acquisitions.length; i++) {
             if (acquisitions[i].getType().equals("Product")) {
                 ProductAcquisition productAcquisition = (ProductAcquisition) acquisitions[i];
 
-                System.out.println(productAcquisition.toString());
+                if (productAcquisition.getCurrentDate() == currentDate) {
+                    System.out.println(productAcquisition);
+                } else {
+                    System.out.println("There are no product acquisitions today.");
+                }
             }
         }
     }
 
-    public void listServiceAcquisitions() {
+    public void listServiceAcquisitions(LocalDate currentDate) {
         System.out.println("Service acquisitions:");
 
         for (int i = 0; i < acquisitions.length; i++) {
             if (acquisitions[i].getType().equals("Service")) {
                 ServiceAcquisition serviceAcquisition = (ServiceAcquisition) acquisitions[i];
 
-                System.out.println(serviceAcquisition.toString());
+                if (serviceAcquisition.getCurrentDate() == currentDate) {
+                    System.out.println(serviceAcquisition);
+                } else {
+                    System.out.println("There are no service acquisitions today.");
+                }
             }
         }
     }
