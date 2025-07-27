@@ -1,8 +1,8 @@
 package org.cquinto.domain;
 
 public final class Repair extends Service {
-    public Repair(String name, double price) {
-        super(name, price);
+    public Repair(String name, String company, double price) {
+        super(name, company, price);
     }
 
     @Override

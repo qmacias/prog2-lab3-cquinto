@@ -21,13 +21,13 @@ public class MainApplication {
 
         Service[] services = new Service[6];
 
-        services[0] = new Repair("Flashing", 8_000.0);
-        services[1] = new Repair("Parts Replacement", 9_000.0);
-        services[2] = new Repair("Hardware Updating", 12_000.0);
+        services[0] = new Repair("Flashing", "JL Solution", 8_000.0);
+        services[1] = new Repair("Parts Replacement", "PC Fixer", 9_000.0);
+        services[2] = new Repair("Hardware Updating", "RAM Technology", 12_000.0);
 
-        services[3] = new Maintenance("Updates", 7_000.0);
-        services[4] = new Maintenance("Cleaning", 5_000.0);
-        services[5] = new Maintenance("Formatting", 10_000.0);
+        services[3] = new Maintenance("Updates", "US Data Bank", 7_000.0);
+        services[4] = new Maintenance("Cleaning", "Software Factory", 5_000.0);
+        services[5] = new Maintenance("Formatting", "Techno Bytes Store", 10_000.0);
 
         Acquisition[] acquisitions = new Acquisition[]{};
 
@@ -35,6 +35,7 @@ public class MainApplication {
 
         int mainOption;
         int detailOption;
+        int yesOrNoOption;
 
         do {
             System.out.println("1. Buy product");
@@ -56,9 +57,28 @@ public class MainApplication {
                     detailOption = Integer.parseInt(scanner.nextLine());
 
                     store.listProductDetail(detailOption);
+
+                    System.out.print("What would you like to do? (1. Acquire, 2. Cancel): ");
+                    yesOrNoOption = Integer.parseInt(scanner.nextLine());
+
+                    if (yesOrNoOption == 1) {
+                        System.out.println("Product acquired.");
+                    }
                     break;
                 case 2:
                     store.listServices();
+
+                    System.out.print("Select service: ");
+                    detailOption = Integer.parseInt(scanner.nextLine());
+
+                    store.listServiceDetail(detailOption);
+
+                    System.out.print("What would you like to do? (1. Acquire, 2. Cancel): ");
+                    yesOrNoOption = Integer.parseInt(scanner.nextLine());
+
+                    if (yesOrNoOption == 1) {
+                        System.out.println("Service acquired.");
+                    }
                     break;
                 case 3:
                     store.listProductAcquisitions();
