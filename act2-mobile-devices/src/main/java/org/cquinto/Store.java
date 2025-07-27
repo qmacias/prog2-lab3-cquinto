@@ -1,8 +1,6 @@
 package org.cquinto;
 
-import org.cquinto.domain.Acquisition;
-import org.cquinto.domain.Product;
-import org.cquinto.domain.Service;
+import org.cquinto.domain.*;
 
 import java.util.Arrays;
 
@@ -25,16 +23,44 @@ public final class Store {
         acquisitions[acquisitionsLenght] = acquisition;
     }
 
-    public Product[] getProducts() {
-        return products;
+    public void listProducts() {
+        System.out.println("Products:");
+
+        for (int i = 0; i < products.length; i++) {
+            System.out.printf("%d.- %s\n", i + 1, products[i].toString());
+        }
     }
 
-    public Service[] getServices() {
-        return services;
+    public void listServices() {
+        System.out.println("Services:");
+
+        for (int i = 0; i < services.length; i++) {
+            System.out.printf("%d.- %s\n", i + 1, services[i].toString());
+        }
     }
 
-    public Acquisition[] getAcquisitions() {
-        return acquisitions;
+    public void listProductAcquisitions() {
+        System.out.println("Product acquisitions:");
+
+        for (int i = 0; i < acquisitions.length; i++) {
+            if (acquisitions[i].getType().equals("Product")) {
+                ProductAcquisition productAcquisition = (ProductAcquisition) acquisitions[i];
+
+                System.out.println(productAcquisition.toString());
+            }
+        }
+    }
+
+    public void listServiceAcquisitions() {
+        System.out.println("Service acquisitions:");
+
+        for (int i = 0; i < acquisitions.length; i++) {
+            if (acquisitions[i].getType().equals("Service")) {
+                ServiceAcquisition serviceAcquisition = (ServiceAcquisition) acquisitions[i];
+
+                System.out.println(serviceAcquisition.toString());
+            }
+        }
     }
 
 }

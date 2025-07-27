@@ -21,7 +21,7 @@ public abstract class Service {
 
     @Override
     public String toString() {
-        return String.format("Service(name='%s', price='%s')", name, price);
+        return String.format("%s", name);
     }
 
 }
