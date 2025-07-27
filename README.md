@@ -21,3 +21,9 @@ We're using:
 **Activity 1 Card Game**
 
 [Go to Activity 1 docs](./act1-card-game/README.md)
+
+## Abstract Classes
+
+**Activity 2 Mobile Devices**
+
+[Go to Activity 2 docs](./act2-mobile-devices/README.md)
