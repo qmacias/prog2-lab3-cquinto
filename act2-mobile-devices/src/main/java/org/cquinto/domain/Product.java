@@ -2,11 +2,11 @@ package org.cquinto.domain;
 
 public abstract class Product {
     protected final String name;
-    protected final double price;
+    protected final ProductDetail detail;
 
-    protected Product(String name, double price) {
+    public Product(String name, String brand, double price) {
         this.name = name;
-        this.price = price;
+        this.detail = new ProductDetail(brand, price);
     }
 
     public abstract String getType();
@@ -15,8 +15,8 @@ public abstract class Product {
         return name;
     }
 
-    public double getPrice() {
-        return price;
+    public ProductDetail getDetail() {
+        return detail;
     }
 
     @Override

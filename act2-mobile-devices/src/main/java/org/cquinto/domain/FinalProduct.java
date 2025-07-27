@@ -1,8 +1,8 @@
 package org.cquinto.domain;
 
 public final class FinalProduct extends Product {
-    public FinalProduct(String name, double price) {
-        super(name, price);
+    public FinalProduct(String name, String brand, double price) {
+        super(name, brand, price);
     }
 
     @Override

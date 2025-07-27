@@ -11,13 +11,13 @@ public class MainApplication {
     public static void main(String[] args) {
         Product[] products = new Product[6];
 
-        products[0] = new Accessory("Charger", 10_000.0);
-        products[2] = new Accessory("Keyboard", 15_000.0);
-        products[1] = new Accessory("Headphones", 40_000.0);
+        products[0] = new Accessory("Charger", "Generic", 10_000.0);
+        products[2] = new Accessory("Keyboard", "Logitech", 15_000.0);
+        products[1] = new Accessory("Headphones", "Sennheiser", 40_000.0);
 
-        products[3] = new FinalProduct("Tablets", 150_500.0);
-        products[4] = new FinalProduct("Smart TV", 300_000.0);
-        products[5] = new FinalProduct("Smart Phone", 100_000.0);
+        products[3] = new FinalProduct("Tablets", "Samsung", 150_500.0);
+        products[4] = new FinalProduct("Smart TV", "Philips", 300_000.0);
+        products[5] = new FinalProduct("Smart Phone", "Huawei", 100_000.0);
 
         Service[] services = new Service[6];
 
@@ -33,7 +33,8 @@ public class MainApplication {
 
         Store store = new Store(products, services, acquisitions);
 
-        int option;
+        int mainOption;
+        int detailOption;
 
         do {
             System.out.println("1. Buy product");
@@ -45,12 +46,16 @@ public class MainApplication {
             System.out.print("Enter an option (quit with 0): ");
 
             Scanner scanner = new Scanner(System.in);
+            mainOption = Integer.parseInt(scanner.nextLine());
 
-            option = Integer.parseInt(scanner.nextLine());
-
-            switch (option) {
+            switch (mainOption) {
                 case 1:
                     store.listProducts();
+
+                    System.out.print("Select product: ");
+                    detailOption = Integer.parseInt(scanner.nextLine());
+
+                    store.listProductDetail(detailOption);
                     break;
                 case 2:
                     store.listServices();
@@ -68,7 +73,7 @@ public class MainApplication {
                     System.out.println("Invalid option. Try again.");
                     break;
             }
-        } while (option != 0);
+        } while (mainOption != 0);
     }
 
 }

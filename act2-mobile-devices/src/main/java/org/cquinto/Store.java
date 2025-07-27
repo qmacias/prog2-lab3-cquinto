@@ -31,6 +31,10 @@ public final class Store {
         }
     }
 
+    public void listProductDetail(int option) {
+        System.out.println(products[option - 1].getDetail().toString());
+    }
+
     public void listServices() {
         System.out.println("Services:");
 
